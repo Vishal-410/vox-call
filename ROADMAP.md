@@ -221,3 +221,36 @@ export interface SignalingPayload {
 | **v1.2.0** | Data Channels & Chat | In-call P2P text/reactions, ICE restart & reconnect | Sprint 2 |
 | **v1.3.0** | Drop-In UI Components | `<vox-call-room>` Web Component, React/Vue hooks | Sprint 3 |
 | **v2.0.0** | Recording & Direct Dial | Client-side recording, WhatsApp-style ringing system | Sprint 4 |
+
+---
+
+## Open Core & Enterprise Architecture
+
+To ensure the long-term sustainability and scalability of the project, **VoxCall** follows an **Open Core** model (similar to LiveKit, Supabase, and PostHog):
+
+### 1. Community Edition (Free & Open-Source — MIT)
+- 100% free forever for personal and commercial applications.
+- Unlimited 1-on-1 audio, video, and screen sharing.
+- Multi-party mesh calling (up to 4–6 peers).
+- In-call P2P data channel chat and file sharing.
+- Self-hostable companion WebSocket signaling server.
+
+### 2. Managed Cloud Infrastructure (Optional PaaS)
+- **Concept:** Provide a global, zero-maintenance cloud backend for teams and companies that do not want to manage their own signaling servers or TURN infrastructure.
+- **Features:**
+  - Globally distributed WebSocket signaling clusters with low-latency edge routing.
+  - Managed global TURN relay network guaranteeing 100% connection rates across restrictive corporate firewalls and mobile data.
+  - Cloud call recording pipelines with automatic storage archival (S3 / GCS).
+- **Client Integration:**
+  ```typescript
+  const call = new VoxCall({
+    apiKey: 'vox_live_...' // Optional: connects directly to managed cloud infrastructure
+  });
+  ```
+
+### 3. Enterprise Extensions
+- **Large-Scale SFU Routing:** Media server architecture for webinars and all-hands meetings (50–100+ participants).
+- **AI Media Processing:** Hardware-accelerated virtual background replacement and intelligent noise suppression.
+- **Enterprise Support:** Dedicated cluster deployments, custom codec optimizations, and SLA support contracts.
+
+
