@@ -15,6 +15,7 @@
 - 🎛️ **Device & Media Controls**: Real-time mute/unmute, camera toggle, and device switching.
 - 📦 **Dual-Format Build**: Bundles both ESM (`.mjs`) and CommonJS (`.js`) with full TypeScript `.d.ts` declarations.
 - 🔌 **Plug-and-Play Signaling**: Includes a companion WebSocket signaling server.
+- 🗺️ **[Product Roadmap & Future Architecture](ROADMAP.md)**: Multi-party calling, data channels, recording, and drop-in UI components.
 
 ---
 
